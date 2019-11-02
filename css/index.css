@@ -29,11 +29,12 @@ header .title {
   justify-content: space-between;
   align-items: center;
 }
-header .title h1 {
+header .title a {
   color: white;
   font-family: "Acme", sans-serif;
   font-size: 35px;
   margin: 0 25px 0 25px;
+  text-decoration: none;
 }
 header .title .fas {
   color: white;
@@ -60,4 +61,64 @@ header .title .fas {
   font-family: "Acme", sans-serif;
   font-size: 25px;
   text-align: center;
+}
+.fullsize-recipe-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border: 1px solid #d5d5d5;
+  justify-content: space-around;
+  margin: 30px;
+  padding: 30px;
+}
+.fullsize-recipe-container-img {
+  width: 25%;
+  height: auto;
+}
+.fullsize-recipe-container-img img {
+  width: 100%;
+}
+.fullsize-recipe-container-details a {
+  color: #ff80aa;
+  font-size: 30px;
+  position: absolute;
+  right: 70px;
+}
+.recipe-container-title {
+  color: black;
+  font-family: "Acme", sans-serif;
+  font-size: 25px;
+}
+.ingredients-full {
+  background-color: #ffe6f2;
+  padding: 30px;
+  margin-top: 30px;
+}
+.ingredients-full h2 {
+  color: black;
+  font-family: "Acme", sans-serif;
+  font-size: 25px;
+}
+.ingredients-full li {
+  color: black;
+  font-size: 20px;
+  font-family: "Nanum Myeongjo", serif;
+}
+.link-raw {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 30px;
+}
+.link-raw button {
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 5px solid #ffe6f2;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 15px;
+  margin-right: 20px;
+  font-family: "Acme", sans-serif;
+  cursor: pointer;
 }
