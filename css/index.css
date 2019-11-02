@@ -70,6 +70,7 @@ header .title .fas {
   justify-content: space-around;
   margin: 30px;
   padding: 30px;
+  position: relative;
 }
 .fullsize-recipe-container-img {
   width: 25%;
@@ -82,7 +83,8 @@ header .title .fas {
   color: #ff80aa;
   font-size: 30px;
   position: absolute;
-  right: 70px;
+  right: 60px;
+  top: 10px;
 }
 .recipe-container-title {
   color: black;
@@ -121,4 +123,52 @@ header .title .fas {
   margin-right: 20px;
   font-family: "Acme", sans-serif;
   cursor: pointer;
+}
+.popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+.popup .form {
+  width: 600px;
+  height: 100%;
+  background-color: white;
+  border-radius: 5px;
+  padding: 30px;
+  box-sizing: border-box;
+  border: 1px solid #d5d5d5;
+  position: relative;
+}
+.popup p {
+  color: black;
+  font-size: 30px;
+  font-family: "Acme", sans-serif;
+  text-align: center;
+}
+.popup input {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 15px;
+  padding: 10px;
+  font-family: "Nanum Myeongjo", serif;
+  font-size: 18px;
+}
+.popup .form a {
+  color: #ff80aa;
+  font-size: 30px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.form button {
+  color: black;
+  border: 5px solid #ffe6f2;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 15px;
+  font-family: "Acme", sans-serif;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-top: 15px;
 }
