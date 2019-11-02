@@ -17,29 +17,31 @@
   </head>
   <body>
     <div class="popup">
-      <form class="form">
-        <p>Add new recipe</p>
-        <a href="#"><i class="fas fa-times"></i></a>
-        <input
-          type="text"
-          name="recipe title"
-          placeholder="recipe title"
-          required
-        />
-        <input
-          type="text"
-          name="recipe source"
-          placeholder="recipe source"
-          required
-        />
-        <input
-          type="text"
-          name="recipe picture"
-          placeholder="recipe picture"
-          required
-        />
-        <button type="button">Add</button>
-      </form>
+      <div class="popup-content">
+        <form class="new-recipe-form">
+          <p>Add new recipe</p>
+          <a href="#"><i class="fas fa-times"></i></a>
+          <input
+            type="text"
+            name="recipe title"
+            placeholder="recipe title"
+            required
+          />
+          <input
+            type="text"
+            name="recipe source"
+            placeholder="recipe source"
+            required
+          />
+          <input
+            type="text"
+            name="recipe picture"
+            placeholder="recipe picture"
+            required
+          />
+          <button type="button">Add</button>
+        </form>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="./js/index.js"></script>
