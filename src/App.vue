@@ -1,23 +1,26 @@
 <template>
   <div>
-    <Header />
+    <Header v-on:addNewRecipe="onClickAddNewPopup" />
     <main>
       <div class="recipe-container">
         <RecipeCover v-for="recipe in recipes" :key="recipe.title" :recipe="recipe" />
       </div>
     </main>
+    <PopupAddRecipe v-if="popupAddRecipe" />
   </div>
 </template>
 
 <script>
 import RecipeCover from "./components/RecipeCover";
 import Header from "./components/Header";
+import PopupAddRecipe from "./components/PopupAddRecipe";
 
 export default {
   name: "app",
   components: {
     RecipeCover,
-    Header
+    Header,
+    PopupAddRecipe
   },
   data() {
     return {
@@ -38,8 +41,14 @@ export default {
           url: require("./assets/img/strawberry-salad.jpg"),
           title: "Strawberry, Basil and Goat Cheese Salad with Balsamic Drizzle"
         }
-      ]
+      ],
+      popupAddRecipe: false
     };
+  },
+  methods: {
+    onClickAddNewPopup() {
+      this.popupAddRecipe = true;
+    }
   }
 };
 </script>
