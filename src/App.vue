@@ -1,25 +1,24 @@
 <template>
   <div>
-    <header>
-      <div class="title">
-        <a href="index.html">Recipe Box</a>
-        <i class="fas fa-utensils"></i>
-      </div>
-    </header>
+    <Header />
     <main>
       <div class="recipe-container">
-        <div class="recipe" v-for="recipe in recipes" :key="recipe.title">
-          <img :src="recipe.url" alt="Cauliflower and farro salad" />
-          <p>{{ recipe.title }}</p>
-        </div>
+        <RecipeCover v-for="recipe in recipes" :key="recipe.title" :recipe="recipe" />
       </div>
     </main>
   </div>
 </template>
 
 <script>
+import RecipeCover from "./components/RecipeCover";
+import Header from "./components/Header";
+
 export default {
   name: "app",
+  components: {
+    RecipeCover,
+    Header
+  },
   data() {
     return {
       recipes: [
