@@ -15,7 +15,6 @@ export default {
   },
   methods: {
     onButtonClick(event) {
-      console.log("Hi I'm here"); // eslint-disable-line
       this.$emit("addNewRecipe", event);
     }
   }

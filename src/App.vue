@@ -6,7 +6,7 @@
         <RecipeCover v-for="recipe in recipes" :key="recipe.title" :recipe="recipe" />
       </div>
     </main>
-    <PopupAddRecipe v-if="popupAddRecipe" />
+    <PopupAddRecipe v-on:add="addRecipe" v-on:close="closePopup" v-if="popupAddRecipe" />
   </div>
 </template>
 
@@ -48,6 +48,12 @@ export default {
   methods: {
     onClickAddNewPopup() {
       this.popupAddRecipe = true;
+    },
+    closePopup() {
+      this.popupAddRecipe = false;
+    },
+    addRecipe(newRecipe) {
+      this.recipes.push(newRecipe);
     }
   }
 };
