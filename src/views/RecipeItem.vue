@@ -36,10 +36,6 @@ export default {
     return {
       recipe: recipes[this.$route.params.index]
     };
-  },
-  mounted() {
-    // eslint-disable-next-line
-    console.log(this.$route.params.index);
   }
 };
 </script>
