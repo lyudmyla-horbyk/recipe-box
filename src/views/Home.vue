@@ -1,7 +1,13 @@
 <template>
   <main>
     <div class="recipe-container">
-      <RecipeCover v-for="recipe in recipes" :key="recipe.title" :recipe="recipe" />
+      <router-link
+        v-for="(recipe, $index) in recipes"
+        :key="recipe.title"
+        :to="{name: 'RecipePage', params: { index: $index }}"
+      >
+        <RecipeCover :recipe="recipe" />
+      </router-link>
     </div>
   </main>
 </template>
