@@ -11,7 +11,7 @@
       <div class="link-raw">
         <button type="button">Sourse</button>
         <button type="button">Edit</button>
-        <button type="button">Delete</button>
+        <Button @click.native="onDeleteClick">Delete</Button>
       </div>
       <div class="ingredients-full">
         <h2>Ingredients</h2>
@@ -30,12 +30,26 @@
   </div>
 </template>
 <script>
+import Button from "../components/Button";
 import { recipes } from "../state";
+
 export default {
   data() {
     return {
       recipe: recipes[this.$route.params.index]
     };
+  },
+  components: {
+    Button
+  },
+  methods: {
+    onDeleteClick() {
+      if (!confirm("Are you sure?")) {
+        return;
+      }
+      recipes.splice(this.$route.params.index, 1);
+      this.$router.push({ name: "Home" });
+    }
   }
 };
 </script>
