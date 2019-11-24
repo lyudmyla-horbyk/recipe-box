@@ -52,13 +52,13 @@ export default {
     }
   },
   beforeRouteEnter(to, from, next) {
-    if (to.params.index > recipes.length || to.params.index < 0) {
+    if (!(to.params.index in recipes)) {
       return next({ name: "404" });
     }
     next();
   },
   beforeRouteUpdate(to, from, next) {
-    if (to.params.index > recipes.length || to.params.index < 0) {
+    if (!(to.params.index in recipes)) {
       return next({ name: "404" });
     }
     next();
