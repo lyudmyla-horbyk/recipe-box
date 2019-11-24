@@ -50,6 +50,18 @@ export default {
       recipes.splice(this.$route.params.index, 1);
       this.$router.push({ name: "Home" });
     }
+  },
+  beforeRouteEnter(to, from, next) {
+    if (to.params.index > recipes.length || to.params.index < 0) {
+      return next({ name: "404" });
+    }
+    next();
+  },
+  beforeRouteUpdate(to, from, next) {
+    if (to.params.index > recipes.length || to.params.index < 0) {
+      return next({ name: "404" });
+    }
+    next();
   }
 };
 </script>
