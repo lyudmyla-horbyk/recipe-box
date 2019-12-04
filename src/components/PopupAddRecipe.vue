@@ -49,5 +49,63 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+.popup .new-recipe-form {
+  height: 100%;
+  background-color: white;
+  border-radius: 5px;
+  padding: 30px;
+  box-sizing: border-box;
+  border: 1px solid #d5d5d5;
+  position: relative;
+}
+.popup p {
+  color: black;
+  font-size: 30px;
+  font-family: "Acme", sans-serif;
+  text-align: center;
+}
+.popup input {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 15px;
+  padding: 10px;
+  font-family: "Nanum Myeongjo", serif;
+  font-size: 18px;
+  border: 1px solid #d5d5d5;
+}
+.popup .new-recipe-form a {
+  color: #ff80aa;
+  font-size: 30px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.new-recipe-form button {
+  color: black;
+  border: 5px solid #ffe6f2;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 15px;
+  font-family: "Acme", sans-serif;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+
+.popup-content {
+  padding: 20px;
+  min-width: 320px;
+  max-width: 100vw;
+  width: 600px;
+  box-sizing: border-box;
+}
 </style>
