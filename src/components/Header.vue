@@ -1,11 +1,13 @@
 <template>
   <header>
     <div class="title">
-      <router-link :to="{name: 'Home'}">Recipe Box</router-link>
+      <router-link :to="{ name: 'Home' }">Recipe Box</router-link>
       <i class="fas fa-utensils"></i>
     </div>
 
-    <Button class="header-button" v-on:click.native="onButtonClick">Add Recipe</Button>
+    <Button class="header-button" v-on:click.native="onButtonClick"
+      >Add Recipe</Button
+    >
   </header>
 </template>
 <script>
@@ -21,7 +23,7 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style scoped lang="scss">
 header {
   display: flex;
   align-items: center;
@@ -30,30 +32,28 @@ header {
   justify-content: space-between;
   padding-top: 20px;
   padding-bottom: 20px;
-}
-header .title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-header .title a {
-  color: white;
-  font-family: "Acme", sans-serif;
-  font-size: 35px;
-  margin: 0 25px 0 25px;
-  text-decoration: none;
-}
-header .title .fas {
-  color: white;
-  font-size: 30px;
-}
-header .header-button {
-  margin-right: 25px;
-}
-@media (max-width: 405px) {
-  header {
+  @media (max-width: 405px) {
     justify-content: center;
     flex-direction: column;
+  }
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+      color: white;
+      font-family: "Acme", sans-serif;
+      font-size: 35px;
+      margin: 0 25px 0 25px;
+      text-decoration: none;
+    }
+    .fas {
+      color: white;
+      font-size: 30px;
+    }
+  }
+  .header-button {
+    margin-right: 25px;
   }
 }
 </style>
