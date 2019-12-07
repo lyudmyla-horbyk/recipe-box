@@ -1,7 +1,11 @@
 <template>
   <div>
     <Header v-on:addNewRecipe="onClickAddNewPopup" />
-    <PopupAddRecipe v-on:add="addRecipe" v-on:close="closePopup" v-if="popupAddRecipe" />
+    <PopupAddRecipe
+      v-on:add="addRecipe"
+      v-on:close="closePopup"
+      v-if="popupAddRecipe"
+    />
     <router-view />
   </div>
 </template>
@@ -37,7 +41,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 body {
   margin: auto;
 }

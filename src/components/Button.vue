@@ -3,7 +3,7 @@
     <slot />
   </button>
 </template>
-<style>
+<style lang="scss">
 .button {
   color: black;
   border: 5px solid #ffe6f2;

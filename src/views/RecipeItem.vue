@@ -17,8 +17,7 @@
         <h2>Ingredients</h2>
         <ul>
           <li>
-            large head cauliflower (about 2 pounds), cut into bite-sized
-            florets
+            large head cauliflower (about 2 pounds), cut into bite-sized florets
           </li>
           <li>extra-virgin olive oil</li>
           <li>teaspoon fine sea salt</li>
@@ -65,7 +64,7 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style scoped lang="scss">
 .fullsize-recipe-container {
   display: flex;
   flex-direction: row;
@@ -73,102 +72,93 @@ export default {
   justify-content: center;
   position: relative;
   padding: 10px;
-}
-.fullsize-recipe-container-img {
-  height: 100%;
-  padding-top: 50px;
-}
-.fullsize-recipe-container-img img {
-  width: 100%;
-}
-.fullsize-recipe-container-details a {
-  color: #ff80aa;
-  font-size: 30px;
-  position: absolute;
-  right: 15px;
-  top: 5px;
-}
-.recipe-container-title {
-  color: black;
-  font-family: "Acme", sans-serif;
-  font-size: 25px;
-  text-align: center;
-  margin-top: 30px;
-}
-.ingredients-full {
-  background-color: #ffe6f2;
-  padding: 30px;
-  margin-top: 30px;
-}
-.ingredients-full h2 {
-  color: black;
-  font-family: "Acme", sans-serif;
-  font-size: 25px;
-}
-.ingredients-full li {
-  color: black;
-  font-size: 20px;
-  font-family: "Nanum Myeongjo", serif;
-}
-.link-raw {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 30px;
-}
-.link-raw button {
-  color: black;
-  text-transform: uppercase;
-  text-decoration: none;
-  border: 5px solid #ffe6f2;
-  border-radius: 10px;
-  padding: 15px;
-  font-size: 15px;
-  font-family: "Acme", sans-serif;
-  cursor: pointer;
-}
-@media (min-width: 490px) {
-  .link-raw {
-    justify-content: center;
-  }
-  .link-raw button {
-    margin: 15px;
-  }
-}
-@media (min-width: 880px) {
-  .fullsize-recipe-container {
+  @media (min-width: 880px) {
     flex-wrap: nowrap;
   }
   .fullsize-recipe-container-img {
-    padding-top: 0;
-    padding-right: 20px;
+    height: 100%;
+    padding-top: 50px;
+    @media (min-width: 880px) {
+      padding-top: 0;
+      padding-right: 20px;
+    }
+    @media (min-width: 500px) {
+      width: 50%;
+      height: auto;
+    }
+    @media (min-width: 1200px) {
+      width: 35%;
+    }
+    img {
+      width: 100%;
+      @media (min-width: 500px) {
+        width: 100%;
+      }
+    }
   }
-  .fullsize-recipe-container-img img {
-    width: 100%;
-  }
-  .link-raw {
-    justify-content: flex-start;
+  .fullsize-recipe-container-details {
+    a {
+      color: #ff80aa;
+      font-size: 30px;
+      position: absolute;
+      right: 15px;
+      top: 5px;
+      @media (min-width: 1200px) {
+        right: 80px;
+        top: 17px;
+      }
+    }
   }
   .recipe-container-title {
-    text-align: inherit;
+    color: black;
+    font-family: "Acme", sans-serif;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 30px;
+    @media (min-width: 880px) {
+      text-align: inherit;
+    }
   }
-}
-@media (min-width: 500px) {
-  .fullsize-recipe-container-img {
-    width: 50%;
-    height: auto;
+  .ingredients-full {
+    background-color: #ffe6f2;
+    padding: 30px;
+    margin-top: 30px;
   }
-  .fullsize-recipe-container-img img {
-    width: 100%;
+  h2 {
+    color: black;
+    font-family: "Acme", sans-serif;
+    font-size: 25px;
   }
-}
-@media (min-width: 1200px) {
-  .fullsize-recipe-container-img {
-    width: 35%;
+  li {
+    color: black;
+    font-size: 20px;
+    font-family: "Nanum Myeongjo", serif;
   }
-  .fullsize-recipe-container-details a {
-    right: 80px;
-    top: 17px;
+  .link-raw {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+    @media (min-width: 880px) {
+      justify-content: flex-start;
+    }
+    @media (min-width: 490px) {
+      justify-content: center;
+    }
+    button {
+      color: black;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 5px solid #ffe6f2;
+      border-radius: 10px;
+      padding: 15px;
+      font-size: 15px;
+      font-family: "Acme", sans-serif;
+      cursor: pointer;
+      @media (min-width: 490px) {
+        margin: 15px;
+      }
+    }
   }
 }
 </style>
