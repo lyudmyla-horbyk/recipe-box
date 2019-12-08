@@ -27,13 +27,16 @@
           placeholder="new ingredients"
           required
         />
-        <button v-on:click="editRecipe" type="button">Edit</button>
+        <button v-on:click="editRecipe" type="button">Save</button>
       </form>
     </div>
   </div>
 </template>
 <script>
 export default {
+  props: {
+    recipe: Object
+  },
   data() {
     return {
       title: "",
@@ -48,10 +51,16 @@ export default {
     editRecipe() {
       this.$emit("edit", {
         url: this.url,
-        title: this.title
-      }),
-        this.$emit("close");
+        title: this.title,
+        ingredients: this.ingredients
+      });
+      this.$emit("close");
     }
+  },
+  mounted() {
+    this.title = this.recipe.title;
+    this.url = this.recipe.url;
+    this.ingredients = this.recipe.ingredients;
   }
 };
 </script>

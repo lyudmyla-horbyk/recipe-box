@@ -10,8 +10,13 @@
       <div class="recipe-container-title">{{ recipe.title }}</div>
       <div class="link-raw">
         <button type="button">Sourse</button>
-        <Button @click.native="editRecipe">Edit</Button>
-        <PopupEditRecipe v-on:close="closePopup" v-if="popupEditRecipe" />
+        <Button @click.native="openPopup">Edit</Button>
+        <PopupEditRecipe
+          :recipe="recipe"
+          v-on:close="closePopup"
+          v-on:edit="editRecipe"
+          v-if="popupEditRecipe"
+        />
         <Button @click.native="onDeleteClick">Delete</Button>
       </div>
       <div class="ingredients-full">
@@ -32,7 +37,7 @@
 <script>
 import Button from "../components/Button";
 import { recipes } from "../state";
-import PopupEditRecipe from '../components/PopupEditRecipe'
+import PopupEditRecipe from "../components/PopupEditRecipe";
 
 export default {
   data() {
@@ -53,11 +58,15 @@ export default {
       recipes.splice(this.$route.params.index, 1);
       this.$router.push({ name: "Home" });
     },
-    editRecipe() {
+    openPopup() {
       this.popupEditRecipe = true;
     },
     closePopup() {
       this.popupEditRecipe = false;
+    },
+    editRecipe(editedRecipe) {
+      recipes.splice(this.$route.params.index, 1, editedRecipe);
+      this.recipe = recipes[this.$route.params.index];
     }
   },
   beforeRouteEnter(to, from, next) {
