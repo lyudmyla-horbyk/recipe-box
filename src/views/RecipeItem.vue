@@ -11,12 +11,6 @@
       <div class="link-raw">
         <button type="button">Sourse</button>
         <Button @click.native="openPopup">Edit</Button>
-        <PopupEditRecipe
-          :recipe="recipe"
-          v-on:close="closePopup"
-          v-on:edit="editRecipe"
-          v-if="popupEditRecipe"
-        />
         <Button @click.native="onDeleteClick">Delete</Button>
       </div>
       <div class="ingredients-full">
@@ -32,6 +26,12 @@
         </ul>
       </div>
     </div>
+    <PopupEditRecipe
+      :recipe="recipe"
+      v-on:close="closePopup"
+      v-on:edit="editRecipe"
+      v-if="popupEditRecipe"
+    />
   </div>
 </template>
 <script>
