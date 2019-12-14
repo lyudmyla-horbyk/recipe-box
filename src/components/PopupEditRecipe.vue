@@ -70,7 +70,7 @@ export default {
 <style scoped lang="scss">
 .popup-wrapper {
   .backdrop {
-      position: fixed;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
