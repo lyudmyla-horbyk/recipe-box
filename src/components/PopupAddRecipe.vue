@@ -51,11 +51,30 @@ export default {
         title: this.title
       }),
         this.$emit("close");
+    },
+    listener(event) {
+      const popupElement = document.querySelector(".popup");
+      const isClickedInsidePopup = event.path.includes(popupElement);
+      if (!isClickedInsidePopup) {
+        this.closePopup();
+      }
     }
+  },
+  mounted() {
+    // eslint-disable-next-line no-console
+    console.log("Показався");
+    setTimeout(() => {
+      window.addEventListener("click", this.listener);
+    });
+  },
+  beforeDestroy() {
+    // eslint-disable-next-line no-console
+    console.log("Вмирає");
+    window.removeEventListener("click", this.listener);
   }
 };
 </script>
-<style scoped lang="scss">
+<style lang="scss">
 .popup {
   position: fixed;
   top: 50%;

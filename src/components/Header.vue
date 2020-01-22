@@ -4,7 +4,9 @@
       <router-link :to="{ name: 'Home' }">Recipe Box</router-link>
       <i class="fas fa-utensils"></i>
     </div>
-    <Button class="header-button" v-on:click.native="onButtonClick">Add Recipe</Button>
+    <Button class="header-button" v-on:click.prevent="onButtonClick"
+      >Add Recipe</Button
+    >
   </header>
 </template>
 <script>
