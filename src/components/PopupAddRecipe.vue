@@ -54,7 +54,22 @@ export default {
         title: this.title
       }),
         this.$emit("close");
+    },
+    listener(event) {
+      const popupElement = document.querySelector(".popup");
+      const isClickedInsidePopup = event.path.includes(popupElement);
+      if (!isClickedInsidePopup) {
+        this.closePopup();
+      }
     }
+  },
+  mounted() {
+    setTimeout(() => {
+      window.addEventListener("click", this.listener);
+    });
+  },
+  beforeDestroy() {
+    window.removeEventListener("click", this.listener);
   }
 };
 </script>
