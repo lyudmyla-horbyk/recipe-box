@@ -61,20 +61,16 @@ export default {
     }
   },
   mounted() {
-    // eslint-disable-next-line no-console
-    console.log("Показався");
     setTimeout(() => {
       window.addEventListener("click", this.listener);
     });
   },
   beforeDestroy() {
-    // eslint-disable-next-line no-console
-    console.log("Вмирає");
     window.removeEventListener("click", this.listener);
   }
 };
 </script>
-<style lang="scss">
+<style scoped lang="scss">
 .popup {
   position: fixed;
   top: 50%;
