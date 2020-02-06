@@ -5,7 +5,9 @@
     </div>
     <div class="fullsize-recipe-container-details">
       <a href="#">
-        <i class="fas fa-times"></i>
+        <router-link :to="{ name: 'Home' }"
+          ><i v-on:click="closeRecipe" class="fas fa-times"></i
+        ></router-link>
       </a>
       <div class="recipe-container-title">{{ recipe.title }}</div>
       <div class="link-raw">
@@ -67,6 +69,9 @@ export default {
     editRecipe(editedRecipe) {
       recipes.splice(this.$route.params.index, 1, editedRecipe);
       this.recipe = recipes[this.$route.params.index];
+    },
+    closeRecipe() {
+      this.$emit("close");
     }
   },
   beforeRouteEnter(to, from, next) {
