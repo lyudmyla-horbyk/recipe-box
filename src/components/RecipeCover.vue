@@ -26,7 +26,7 @@ export default {
     margin: 20px;
     img {
       width: 100%;
-      height: auto
+      height: 100%;
     }
     p {
       color: black;
@@ -36,9 +36,8 @@ export default {
       height: 100px;
     }
     .wrapper-img{
-      height: 100%;
+      height: 460px;
       width: 100%;
-      display: block;
     }
   }
 }
