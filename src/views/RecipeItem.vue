@@ -5,7 +5,7 @@
     </div>
     <div class="fullsize-recipe-container-details">
       <router-link :to="{ name: 'Home' }"
-        ><i v-on:click="closeRecipe" class="fas fa-times"></i
+        ><i class="fas fa-times"></i
       ></router-link>
 
       <div class="recipe-container-title">{{ recipe.title }}</div>
