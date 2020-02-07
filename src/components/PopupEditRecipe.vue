@@ -22,13 +22,14 @@
             placeholder="new picture"
             required
           />
-          <input
+          <textarea
+            rows="3"
             v-model="ingredients"
             type="text"
             name="edit ingredients"
             placeholder="new ingredients"
             required
-          />
+          ></textarea>
           <button v-on:click="editRecipe" type="button">Save</button>
         </form>
       </div>
@@ -55,7 +56,7 @@ export default {
       this.$emit("edit", {
         url: this.url,
         title: this.title,
-        ingredients: this.ingredients
+        ingredients: this.ingredients.split("\n")
       });
       this.$emit("close");
     }
@@ -100,7 +101,8 @@ export default {
       font-family: "Acme", sans-serif;
       text-align: center;
     }
-    input {
+    input,
+    textarea {
       width: 100%;
       box-sizing: border-box;
       margin-top: 15px;
