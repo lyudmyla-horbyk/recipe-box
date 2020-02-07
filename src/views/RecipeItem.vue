@@ -4,11 +4,10 @@
       <img :src="recipe.url" :alt="recipe.title" />
     </div>
     <div class="fullsize-recipe-container-details">
-      <a href="#">
-        <router-link :to="{ name: 'Home' }"
-          ><i v-on:click="closeRecipe" class="fas fa-times"></i
-        ></router-link>
-      </a>
+      <router-link :to="{ name: 'Home' }"
+        ><i v-on:click="closeRecipe" class="fas fa-times"></i
+      ></router-link>
+
       <div class="recipe-container-title">{{ recipe.title }}</div>
       <div class="link-raw">
         <button type="button">Sourse</button>
@@ -69,9 +68,6 @@ export default {
     editRecipe(editedRecipe) {
       recipes.splice(this.$route.params.index, 1, editedRecipe);
       this.recipe = recipes[this.$route.params.index];
-    },
-    closeRecipe() {
-      this.$emit("close");
     }
   },
   beforeRouteEnter(to, from, next) {
