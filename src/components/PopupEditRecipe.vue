@@ -64,7 +64,7 @@ export default {
   mounted() {
     this.title = this.recipe.title;
     this.url = this.recipe.url;
-    this.ingredients = this.recipe.ingredients.join('\n');
+    this.ingredients = this.recipe.ingredients.join('/n');
   }
 };
 </script>
