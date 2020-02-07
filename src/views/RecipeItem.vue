@@ -4,9 +4,10 @@
       <img :src="recipe.url" :alt="recipe.title" />
     </div>
     <div class="fullsize-recipe-container-details">
-      <a href="#">
-        <i class="fas fa-times"></i>
-      </a>
+      <router-link :to="{ name: 'Home' }"
+        ><i class="fas fa-times"></i
+      ></router-link>
+
       <div class="recipe-container-title">{{ recipe.title }}</div>
       <div class="link-raw">
         <button type="button">Sourse</button>
