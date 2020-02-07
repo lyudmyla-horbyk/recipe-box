@@ -1,7 +1,7 @@
 <template>
   <div class="recipe">
     <div class="wrapper-img">
-    <img :src="recipe.url" :alt="recipe.title" />
+      <img :src="recipe.url" :alt="recipe.title" />
     </div>
     <p>{{ recipe.title }}</p>
   </div>
@@ -35,7 +35,7 @@ export default {
       text-align: center;
       height: 100px;
     }
-    .wrapper-img{
+    .wrapper-img {
       height: 460px;
       width: 100%;
     }
