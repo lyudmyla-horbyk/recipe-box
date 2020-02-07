@@ -17,13 +17,9 @@
       <div class="ingredients-full">
         <h2>Ingredients</h2>
         <ul>
-          <li>
-            large head cauliflower (about 2 pounds), cut into bite-sized florets
+          <li v-for="ingredient in recipe.ingredients" :key="ingredient">
+            {{ ingredient }}
           </li>
-          <li>extra-virgin olive oil</li>
-          <li>teaspoon fine sea salt</li>
-          <li>cloves garlic, pressed or minced</li>
-          <li>avocado, sliced into thin strips</li>
         </ul>
       </div>
     </div>
