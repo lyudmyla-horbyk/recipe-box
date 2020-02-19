@@ -59,4 +59,7 @@ nav {
   padding: 0;
   width: 100%;
 }
+button {
+  background-color: white;
+}
 </style>
